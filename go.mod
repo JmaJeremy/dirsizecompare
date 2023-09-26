@@ -1,4 +1,4 @@
-module JmaJeremy/dirsizecompare
+module github.com/JmaJeremy/dirsizecompare
 
 go 1.21.1
 
