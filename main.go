@@ -4,6 +4,9 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"time"
+
+	"github.com/inancgumus/screen"
 )
 
 func getDirSize(dir string) int64 {
@@ -33,4 +36,15 @@ func main() {
 	fmt.Println("Destination size: ", dest_sz)
 	pct = (float64(dest_sz) / float64(orig_sz)) * 100
 	fmt.Printf("%.2f%% \n", pct)
+
+	for true {
+		time.Sleep(5 * time.Second)
+		screen.Clear()
+		screen.MoveTopLeft()
+		dest_sz = getDirSize(os.Args[2])
+		fmt.Println("Original size: ", orig_sz)
+		fmt.Println("Destination size: ", dest_sz)
+		pct = (float64(dest_sz) / float64(orig_sz)) * 100
+		fmt.Printf("%.2f%% \n", pct)
+	}
 }
