@@ -45,6 +45,6 @@ func main() {
 		fmt.Println("Original size: ", orig_sz)
 		fmt.Println("Destination size: ", dest_sz)
 		pct = (float64(dest_sz) / float64(orig_sz)) * 100
-		fmt.Printf("%.2f%% \n", pct)
+		fmt.Printf("%.2f%% \n\nPress CTRL+C to end...\n", pct)
 	}
 }
