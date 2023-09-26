@@ -26,6 +26,11 @@ func getDirSize(dir string) int64 {
 }
 
 func main() {
+	if len(os.Args) != 3 {
+		fmt.Println("Usage: ./dirsizecompare [origin] [destination]")
+		return
+	}
+
 	var orig_sz int64
 	var dest_sz int64
 	var pct float64
