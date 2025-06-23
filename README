@@ -1,3 +1,6 @@
 Simple GO app to compare the size of two directories. I just wanted to be able to monitor the
 file copy process while backing up a very large directory, and the native Linux tools for
 checking a directory size just aren't fast enough. Wrote this in GO and it seems to work well.
+
+Usage: 
+# dirsizecompare -d1=DIR1 -d2=DIR2 [-f]
