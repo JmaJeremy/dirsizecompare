@@ -39,6 +39,7 @@ func main() {
 	followPtr := flag.Bool("f", false, "follow")
 	dir1Ptr := flag.String("d1", "", "DIR1")
 	dir2Ptr := flag.String("d2", "", "DIR2")
+	dir1xPtr := flag.String("d1x", "", "DIR1x")
 	flag.Parse()
 //	fmt.Println("f:", *followPtr)
 	if len(*dir1Ptr) < 1 &&  len(*dir2Ptr) < 1 {
@@ -48,7 +49,11 @@ func main() {
 
 	//orig_sz = getDirSize(os.Args[1])
 	//dest_sz = getDirSize(os.Args[2])
-	orig_sz = getDirSize(*dir1Ptr)
+	if len(*dir1xPtr) >= 1 {
+		orig_sz = getDirSize(*dir1Ptr) + getDirSize(*dir1xPtr)
+	} else {
+		orig_sz = getDirSize(*dir1Ptr)
+	}
 	dest_sz = getDirSize(*dir2Ptr)
 	fmt.Println("Original size: ", orig_sz)
 	fmt.Println("Destination size: ", dest_sz)
